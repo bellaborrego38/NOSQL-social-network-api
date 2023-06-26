@@ -7,8 +7,8 @@ router.get('/api/Thoughts', thoughtController.getThoughts);
 router.post('/api/Thoughts', thoughtController.createThought);
 
 router.get('/api/thoughts/:thoughtId', thoughtController.getSingleThought);
-router.put('/api/thoughts/:thoughtId', thoughtController.updateThought);
-router.delete('/api/thoughts/:thoughtId', thoughtController.deleteThought);
+// router.put('/api/thoughts/:thoughtId', thoughtController.updateThought);
+// router.delete('/api/thoughts/:thoughtId', thoughtController.deleteThought);
 
 router.post('/api/thoughts/:thoughtId/reactions', thoughtController.addReaction);
 

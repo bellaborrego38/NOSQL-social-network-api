@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 
 // Schema to create Student model
-const userSchema = new Schema(
+const reactionSchema = new Schema(
   {
     reactionId: {
       type: Schema.Types.ObjectId,
@@ -38,6 +38,4 @@ const userSchema = new Schema(
 });
 
 
-const Reaction = model('Reaction', userSchema);
-
-module.exports = Reaction;
+module.exports = reactionSchema;
