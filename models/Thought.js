@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const Reaction = require('./Reaction');
+const reactionSchema = require('./Reaction');
 
 
 // Schema to create Student model
@@ -15,22 +15,21 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: createdAtDate => moment(createdAtDate).format('MMM DD, YYYY [at] hh:mm a')
+      get: timestamp => dateFormat(timestamp)
     
     },
 
     username: {
         type: String,
-      required: true,
-      unique: true,
-      match: [/.+@.+\..+/,"invalid email format"]
+      required: true
     },
       
-    reactions: [Reaction]
+    reactions: [reactionSchema]
 
-}, {
+},
+{
   toJSON: {
-      virtuals: true
+      getters: true
   },
   id: false
 });
