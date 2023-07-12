@@ -1,12 +1,12 @@
 const { User, Thought } = require('../models');
 
 const thoughtController = {
-  getThoughts(req, res) {
-    Thought.find({ _id: req.params.thoughtId })
-  .then((thoughts) => {
-    console.log(thoughts)
-    res.json(thoughts)})
-  .catch((err) => res.status(500).json(err));
+  async getThoughts (req, res) {
+    const result = await Thought.find ({})
+  // .then((thoughts) => {
+  //   console.log(thoughts)
+    res.json(result)
+  // .catch((err) => res.status(500).json(err));
   },
 
   getSingleThought(req, res) {
